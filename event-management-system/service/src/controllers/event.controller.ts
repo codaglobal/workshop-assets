@@ -7,15 +7,19 @@ class EventController {
 
   public eventService = new EventService();
 
-  public addEvent = async(request: Request, response: Response, next: NextFunction) => {
-    const eventData: CreateEventDto = request.body;
-    const createUserData: Event = await this.eventService.addEvent(eventData);
-    response.status(200).json({data: createUserData, message: 'Created'});
+  public addEvent = async (request: Request, response: Response, next: NextFunction) => {
+    try {
+      const eventData: CreateEventDto = request.body;
+      const createUserData: Event = await this.eventService.addEvent(eventData);
+      response.status(200).json({ data: createUserData, message: 'Created' });
+    } catch (err) {
+      next(err);
+    }
   }
 
-  public listEvents = async(request: Request, response: Response, next: NextFunction) => {
+  public listEvents = async (request: Request, response: Response, next: NextFunction) => {
     const events: Event[] = await this.eventService.listEvents();
-    response.status(200).json({data: events});
+    response.status(200).json({ data: events });
   }
 }
 

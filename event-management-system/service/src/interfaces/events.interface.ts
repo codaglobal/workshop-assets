@@ -1,11 +1,8 @@
 export interface Event {
   _id: string;
-  eventName: string;
-  eventType: string;
-  eventDate: string;
-  departments: Department[];
+  name: string;
+  type: string;
+  date: string;
+  venue: string;
 }
 
-export class Department {
-  name: string;
-}

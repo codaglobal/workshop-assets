@@ -2,10 +2,10 @@ import * as mongoose from 'mongoose';
 import { Event } from '../interfaces/events.interface';
 
 const eventSchema = new mongoose.Schema({
-  eventName: String,
-  eventType: String,
-  eventDate: String,
-  departments: Array
+  name: String,
+  type: String,
+  date: String,
+  venue: String
 });
 
 const eventModel = mongoose.model<Event & mongoose.Document>('Event', eventSchema);
