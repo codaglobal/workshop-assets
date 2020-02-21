@@ -1,0 +1,11 @@
+<div class="event-list-wrapper">
+    <div class="title-section">
+        <div class="float-left title" >Events</div>
+        <button class="button float-right">
+            Add Event
+        </button>
+    </div>
+    <div class="events">
+        <app-event-card *ngFor="let event of events" [event]="event"></app-event-card>
+    </div>
+</div>

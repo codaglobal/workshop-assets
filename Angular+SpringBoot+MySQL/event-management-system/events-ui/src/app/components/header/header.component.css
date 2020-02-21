@@ -1,0 +1,13 @@
+.header-wrapper {
+  padding: 20px 0px 20px 10%;
+  border-bottom: 1px solid #f0e4df;
+}
+.header-wrapper .logo {
+  color: #eb3b81;
+  font-weight: 600;
+  font-size: 18px;
+  background: -webkit-linear-gradient( #f08f5f, #eb3b81);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

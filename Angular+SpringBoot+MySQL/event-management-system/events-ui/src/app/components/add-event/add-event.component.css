@@ -1,0 +1,42 @@
+.add-event-wrapper {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+}
+
+.add-event-card {
+  background: white;
+  padding: 30px;
+  width: 500px;
+  border-radius: 15px;
+}
+
+.input-wrapper {
+  margin-bottom: 20px;
+}
+
+.input-wrapper input {
+  padding: 5px 10px;
+  height: 35px;
+  width: 96%;
+  border-radius: 5px;
+  border: 1px solid #dadada;
+  margin-top: 8px;
+  font-size: 14px;
+}
+::placeholder {
+  /* Chrome/Opera/Safari */
+  color: #7e7575;
+  font-size: 14px;
+}
+
+.button-wrapper {
+  margin-top: 40px;
+}
+.card-title {
+  font-size: 16px;
+  margin-bottom: 30px;
+}

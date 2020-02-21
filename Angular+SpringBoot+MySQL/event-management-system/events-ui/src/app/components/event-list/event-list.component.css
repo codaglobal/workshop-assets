@@ -1,0 +1,17 @@
+.event-list-wrapper{
+    margin: 0 auto;
+    width: 80%;
+}
+.title-section{
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-section .title{
+    font-size: 16px;
+}
+.events{
+    display: flex; 
+    flex-wrap: wrap;
+}
