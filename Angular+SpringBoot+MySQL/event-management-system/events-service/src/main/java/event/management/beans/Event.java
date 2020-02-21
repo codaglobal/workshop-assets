@@ -1,14 +1,12 @@
 package event.management.beans;
 
-import java.sql.Timestamp;
-
 public class Event {
 
 	private int id;
 	private String name;
 	private String venue;
 	private String type;
-	private Timestamp date;
+	private String date;
 
 	public int getId() {
 		return id;
@@ -42,11 +40,11 @@ public class Event {
 		this.type = type;
 	}
 
-	public Timestamp getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Timestamp date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
