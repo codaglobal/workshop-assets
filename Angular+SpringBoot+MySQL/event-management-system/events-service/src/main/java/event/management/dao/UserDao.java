@@ -20,14 +20,14 @@ public class UserDao {
 		try {
 			String insertUserQuery = "insert into users(event_id, first_name, last_name, register_no, "
 					+ "department, email) values(?,?,?,?,?,?)";
-			PreparedStatement updateemp = connection.prepareStatement(insertUserQuery);
-			updateemp.setInt(1, user.getEventId());
-			updateemp.setString(2, user.getFirstName());
-			updateemp.setString(3, user.getLastName());
-			updateemp.setString(4, user.getRegisterNo());
-			updateemp.setString(5, user.getDepartment());
-			updateemp.setString(6, user.getEmail());
-			return updateemp.executeUpdate() > 0;
+			PreparedStatement addUserStatement = connection.prepareStatement(insertUserQuery);
+			addUserStatement.setInt(1, user.getEventId());
+			addUserStatement.setString(2, user.getFirstName());
+			addUserStatement.setString(3, user.getLastName());
+			addUserStatement.setString(4, user.getRegisterNo());
+			addUserStatement.setString(5, user.getDepartment());
+			addUserStatement.setString(6, user.getEmail());
+			return addUserStatement.executeUpdate() > 0;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -9,8 +9,9 @@ public class MysqlConfig {
 	
 	public static Connection getConnection() throws Exception {
 		Class.forName(ApplicationConstants.DRIVER_NAME);
-		return DriverManager.getConnection(ApplicationConstants.MYSQL_HOSTNAME,
+		Connection connection = DriverManager.getConnection(ApplicationConstants.MYSQL_HOSTNAME,
 				ApplicationConstants.MYSQL_USERNAME, ApplicationConstants.MYSQL_PASSWORD);
+		return connection;
 	}
 
 }

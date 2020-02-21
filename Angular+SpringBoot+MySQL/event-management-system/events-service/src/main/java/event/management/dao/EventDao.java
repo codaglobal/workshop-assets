@@ -20,40 +20,40 @@ public class EventDao {
 		this.connection = MysqlConfig.getConnection();
 	}
 
+	public boolean addEvent(Event event) {
+		try {
+			String addEventQuery = "insert into events(name, type, venue, date) values(?,?,?,?)";
+			PreparedStatement addEventStatement = connection.prepareStatement(addEventQuery);
+			addEventStatement.setString(1, event.getName());
+			addEventStatement.setString(2, event.getType());
+			addEventStatement.setString(3, event.getVenue());
+			addEventStatement.setString(4, event.getDate());
+			return addEventStatement.executeUpdate() > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 	public List<Event> getEvents() {
 		List<Event> events = new ArrayList<>();
 		try {
 			String getEventsQuery = "select * from events";
-			Statement stmt = connection.createStatement();
-			ResultSet rs = stmt.executeQuery(getEventsQuery);
-			while (rs.next()) {
+			Statement getEventsStatement = connection.createStatement();
+			ResultSet resultSet = getEventsStatement.executeQuery(getEventsQuery);
+			while (resultSet.next()) {
 				Event event = new Event();
-				event.setId(rs.getInt("id"));
-				event.setName(rs.getString("name"));
-				event.setType(rs.getString("type"));
-				event.setVenue(rs.getString("venue"));
-				event.setDate(rs.getString("date"));
+				event.setId(resultSet.getInt("id"));
+				event.setName(resultSet.getString("name"));
+				event.setType(resultSet.getString("type"));
+				event.setVenue(resultSet.getString("venue"));
+				event.setDate(resultSet.getString("date"));
 				events.add(event);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return events;
-	}
-
-	public boolean addEvent(Event event) {
-		try {
-			String addEventQuery = "insert into events(name, type, venue, date) values(?,?,?,?)";
-			PreparedStatement updateemp = connection.prepareStatement(addEventQuery);
-			updateemp.setString(1, event.getName());
-			updateemp.setString(2, event.getType());
-			updateemp.setString(3, event.getVenue());
-			updateemp.setString(4, event.getDate());
-			return updateemp.executeUpdate() > 0;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
 	}
 
 }
