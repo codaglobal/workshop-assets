@@ -17,8 +17,9 @@ public class UserController {
 	UserService userService;
 
 	@PostMapping
-	public void addUserToEvent(@RequestBody User user) {
-		// boolean isUpdated = userService.addUser(user)
+	public boolean addUserToEvent(@RequestBody User user) {
+		 boolean isUpdated = userService.addUser(user);
+		 return isUpdated;
 	}
 
 }

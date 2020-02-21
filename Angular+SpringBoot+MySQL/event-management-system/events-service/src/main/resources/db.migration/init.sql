@@ -7,7 +7,7 @@ CREATE TABLE `event_management_db`.`events` (
   PRIMARY KEY (`id`));
 
 CREATE TABLE `event_management_db`.`users` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `event_id` INT NULL,
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
