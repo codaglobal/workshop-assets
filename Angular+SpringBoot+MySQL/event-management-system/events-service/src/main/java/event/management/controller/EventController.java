@@ -1,6 +1,5 @@
 package event.management.controller;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +20,13 @@ public class EventController {
 	EventService eventManagementService;
 
 	@GetMapping
-	public List<Event> getEvents() throws SQLException {
+	public List<Event> getEvents() {
 		List<Event> events = eventManagementService.getEvents();
 		return events;
 	}
-	
+
 	@PostMapping
-	public boolean addEvent(@RequestBody Event event) throws SQLException {
+	public boolean addEvent(@RequestBody Event event) {
 		boolean isUpdated = eventManagementService.addEvent(event);
 		return isUpdated;
 	}

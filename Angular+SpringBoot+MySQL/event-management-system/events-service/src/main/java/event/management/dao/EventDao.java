@@ -3,7 +3,6 @@ package event.management.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,19 +20,23 @@ public class EventDao {
 		this.connection = MysqlConfig.getConnection();
 	}
 
-	public List<Event> getEvents() throws SQLException {
+	public List<Event> getEvents() {
 		List<Event> events = new ArrayList<>();
-		String getEventsQuery = "select * from events";
-		Statement stmt = connection.createStatement();
-		ResultSet rs = stmt.executeQuery(getEventsQuery);
-		while (rs.next()) {
-			Event event = new Event();
-			event.setId(rs.getInt("id"));
-			event.setName(rs.getString("name"));
-			event.setType(rs.getString("type"));
-			event.setVenue(rs.getString("venue"));
-			event.setDate(rs.getString("date"));
-			events.add(event);
+		try {
+			String getEventsQuery = "select * from events";
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery(getEventsQuery);
+			while (rs.next()) {
+				Event event = new Event();
+				event.setId(rs.getInt("id"));
+				event.setName(rs.getString("name"));
+				event.setType(rs.getString("type"));
+				event.setVenue(rs.getString("venue"));
+				event.setDate(rs.getString("date"));
+				events.add(event);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return events;
 	}
