@@ -1,12 +1,11 @@
 <div class="event-wrapper">
-    <div class="title">{{event.name}}</div>
+    <div class="title mb-20">{{event.name}}</div>
+
     <div>
         <div class="mb-20">{{event.type}}</div>
-        <div class="mb-20">{{event.date | date}}</div>
-        <div class="mb-20">{{event.venue}}</div>
-    </div>
-    <div>
-        <button class="button float-right">Join</button>
+        <div class="mb-20  ">{{event.date | date}}</div>
+        <div class="mb-20 float-left">Venue: {{event.venue}}</div>
+        <div class="join-button float-right">+</div>
         <div class="clearfix"></div>
     </div>
-    <div>
+<div>

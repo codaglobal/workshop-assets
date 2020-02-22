@@ -4,13 +4,19 @@
   margin-right: 30px;
   margin-bottom: 30px;
   width: 350px;
-  border-radius: 15px;
-
+  border: 1px solid #e0e0e0;
 }
-.event-wrapper  .title {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #f0e4df;
-    margin-bottom: 20px;
-  }
+.event-wrapper .title {
+  font-weight: 600;
+}
 
-
+.join-button {
+  border-radius: 50%;
+  background-image: linear-gradient(to right, #43afbe, #48b527);
+  color: white;
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+}
